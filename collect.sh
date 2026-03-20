@@ -47,6 +47,9 @@ for dir in nvim i3 i3status polybar espanso neofetch; do
     safe_cp_dir "$HOME_DIR/.config/$dir" "$DOTFILES_DIR/config/$dir"
 done
 
+# Remove files that shouldn't be tracked
+rm -f "$DOTFILES_DIR/config/nvim/lazy-lock.json"
+
 # ~/scripts/ -> scripts/
 safe_cp_dir "$HOME_DIR/scripts" "$DOTFILES_DIR/scripts"
 

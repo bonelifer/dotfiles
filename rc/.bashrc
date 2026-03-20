@@ -12,6 +12,7 @@ esac
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
+# Vimify my manpage
 export MANPAGER='nvim +Man!'
 
 # append to the history file, don't overwrite it
@@ -27,6 +28,7 @@ shopt -s checkwinsize
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
 
 # If Debian
 # set variable identifying the chroot you work in (used in the prompt below)
@@ -85,7 +87,7 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]$USERDISPLAY\[\033[01;31m\
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+  . ~/.bash_aliases
 fi
 if [ -f ~/.bash_env ]; then
   . ~/.bash_env
@@ -102,27 +104,5 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-greeting () {
-  # http://patorjk.com/software/taag-v1/
-  # https://colordesigner.io/gradient-generator
-  RED1="\033[38;2;254;039;064m"
-  RED2="\033[38;2;255;096;049m"
-  RED3="\033[38;2;255;138;039m"
-  RED4="\033[38;2;255;176;044m"
-  CYAN1="\033[38;2;000;224;196m"
-  CYAN2="\033[38;2;000;201;248m"
-  CYAN3="\033[38;2;000;165;255m"
-  CYAN4="\033[38;2;126;106;255m"
-  RESET="\033[0;00m"
-
-  # Print ASCII art with color variables
-  echo -e "${RED1} dP\"\"Yb ${RESET} ${CYAN1}88  88  88\"\"Yb 88   88 88b 88 888888 88 88b 88  dP\"\"b8 ${RESET}"
-  echo -e "${RED2}dP PY Yb ${RESET}${CYAN2}88  88  88__dP 88   88 88Yb88   88   88 88Yb88 dP   \`\" ${RESET}"
-  echo -e "${RED3}Yb boodP ${RESET}${CYAN3}888888  88\"Yb  Y8   8P 88 Y88   88   88 88 Y88 Yb  \"88 ${RESET}"
-  echo -e "${RED4} Ybooo  ${RESET}${CYAN4} 88  88  88  Yb \`YbodP' 88  Y8   88   88 88  Y8  YboodP ${RESET}"
-}
-# greeting
-
 
 eval "$(mcfly init bash)"
