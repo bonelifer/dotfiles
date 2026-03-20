@@ -9,7 +9,7 @@ matches:
       - name: mydate
         type: date
         params:
-          format: "%m/%d/%Y"
+          format: "%Y/%m/%d"
 
   # Print the current date and time
   - trigger: ":now"
@@ -18,7 +18,7 @@ matches:
       - name: mydatetime
         type: date
         params:
-          format: "%m/%d/%Y %H:%M:%S"
+          format: "%Y/%m/%d %H:%M:%S"
 
   - trigger: ":temp"
     replace: "{{temp}}"

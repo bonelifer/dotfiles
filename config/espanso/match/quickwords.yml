@@ -5,3 +5,8 @@ matches:
   - trigger: "acqd"
     replace: "acquired"
 
+  - trigger: "idk"
+    replace: "i don't know"
+
+  - trigger: "idr"
+    replace: "i don't remember"

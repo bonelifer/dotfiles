@@ -162,54 +162,58 @@ bindsym $mod+d exec sh -c 'dmenu_run -i -p "$(hostname)" -fn "Inconsolata:bold:p
 
  # resize window (you can also use the mouse for that)
  mode "resize" {
-   # These bindings trigger as soon as you enter the resize mode
+# These bindings trigger as soon as you enter the resize mode
 
-   # Pressing left will shrink the window’s width
-   bindsym Down resize grow height 2 px or 2 ppt
-   bindsym Up resize shrink height 2 px or 2 ppt
-   bindsym Right resize grow width 2 px or 2 ppt
-   bindsym Left resize shrink width 2 px or 2 ppt
+# Pressing left will shrink the window’s width
+  bindsym Down resize grow height 2 px or 2 ppt
+  bindsym Up resize shrink height 2 px or 2 ppt
+  bindsym Right resize grow width 2 px or 2 ppt
+  bindsym Left resize shrink width 2 px or 2 ppt
 
-   bindsym bracketright resize grow width 25px or 25 ppt
-   bindsym bracketleft resize shrink width 25px or 25 ppt
-   bindsym Prior resize grow height 25 px or 25 ppt
-   bindsym Next resize shrink height 25 px or 25 ppt
+  bindsym bracketright resize grow width 25px or 25 ppt
+  bindsym bracketleft resize shrink width 25px or 25 ppt
+  bindsym Prior resize grow height 25 px or 25 ppt
+  bindsym Next resize shrink height 25 px or 25 ppt
 
-   # back to normal: Enter or Escape
-   bindsym Return mode "default"
-   bindsym Escape mode "default"
- }
+# back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
 
- bindsym $mod+r mode "resize"
+bindsym $mod+r mode "resize"
 
- for_window [ title="Friends List" class="Steam" instance="Steam"] floating enable
- for_window [ title="^.*News" class="Steam" instance="Steam"] floating enable
- for_window [ class="Pavucontrol" instance="pavucontrol"] floating enable
- for_window [ class="Galculator" instance="galculator"] floating enable
- for_window [ class="NoiseTorch" instance="NoiseTorch"] floating enable
- for_window [ class="Xfce4-appfinder" instance="xfce4-appfinder"] floating enable
- for_window [ class="Nitrogen" instance="nitrogen"] floating enable
- for_window [ class="Mainwindow.py" instance="mainwindow.py"] floating enable
- for_window [ class="Nm-connection-editor" instance="nm-connection-editor"] floating enable
- for_window [ class="Nvidia-settings" instance="nvidia-settings"] floating enable
- for_window [ class="Xfce4-session-settings" instance="xfce4-session-settings"] floating enable
- for_window [ class="Xfce4-display-settings" instance="xfce4-display-settings"] floating enable
- for_window [ class="Xfce4-font-manager" instance="xfce4-font-manager"] floating enable
- for_window [ class="smile" instance="smile"] floating enable
+for_window [ title="Friends List" class="Steam" instance="Steam"] floating enable
+for_window [ title="^.*News" class="Steam" instance="Steam"] floating enable
+for_window [ class="Pavucontrol" instance="pavucontrol"] floating enable
+for_window [ class="Galculator" instance="galculator"] floating enable
+for_window [ class="NoiseTorch" instance="NoiseTorch"] floating enable
+for_window [ class="Xfce4-appfinder" instance="xfce4-appfinder"] floating enable
+for_window [ class="Nitrogen" instance="nitrogen"] floating enable
+for_window [ class="Mainwindow.py" instance="mainwindow.py"] floating enable
+for_window [ class="Nm-connection-editor" instance="nm-connection-editor"] floating enable
+for_window [ class="Nvidia-settings" instance="nvidia-settings"] floating enable
+for_window [ class="Xfce4-session-settings" instance="xfce4-session-settings"] floating enable
+for_window [ class="Xfce4-display-settings" instance="xfce4-display-settings"] floating enable
+for_window [ class="Xfce4-font-manager" instance="xfce4-font-manager"] floating enable
+for_window [ class="smile" instance="smile"] floating enable
 
- for_window [window_role="pop-up"] floating enable
- for_window [window_role="bubble"] floating enable
- for_window [window_role="task_dialog"] floating enable
- for_window [window_role="Preferences"] floating enable
- for_window [window_type="dialog"] floating enable
- for_window [window_type="menu"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
 
- for_window [class="^zoom$" title="^.*(?<!Zoom Meeting)$"] floating enable, move position center
+for_window [class="^zoom$" title="^.*(?<!Zoom Meeting)$"] floating enable, move position center
 
- for_window [class="^.*"] border pixel 2 default_border pixel 2 default_floating_border pixel 2 border_color="#FFFFFF"
+for_window [class="^.*"] border pixel 2 default_border pixel 2 default_floating_border pixel 2 border_color="#FFFFFF"
 
- exec --no-startup-id nitrogen --restore
- exec --no-startup-id xbindkeys
- exec --no-startup-id pcloud 
- exec polybar primary &
- exec polybar seconday &
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id xbindkeys
+exec --no-startup-id pcloud 
+exec --no-startup-id espanso
+#exec polybar primary &
+#exec polybar seconday &
+
+exec_always --no-startup-id xautolock -time 5 -locker $HOME/scripts/i3lock.sh
+exec --no-startup-id xss-lock --transfer-sleep-lock -- $HOME/scripts/i3lock.sh --nofork

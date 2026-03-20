@@ -12,7 +12,6 @@ esac
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
-# Vimify my manpage
 export MANPAGER='nvim +Man!'
 
 # append to the history file, don't overwrite it
@@ -28,7 +27,6 @@ shopt -s checkwinsize
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
 
 # If Debian
 # set variable identifying the chroot you work in (used in the prompt below)
@@ -90,7 +88,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 if [ -f ~/.bash_env ]; then
-    . ~/.bash_env
+  . ~/.bash_env
 fi
 
 export STEAM_ROOT=/home/ttrreevvoorr/.local/share/Steam
@@ -126,3 +124,5 @@ greeting () {
 }
 # greeting
 
+
+eval "$(mcfly init bash)"
