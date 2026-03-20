@@ -110,30 +110,17 @@ reboot
 
 ## Installing packages
 
-Starting moving files into appropriate locations:
+Deploy dotfiles and install packages
 
 ```
 git clone https://github.com/ttrreevvoorr/dotfiles.git
-cd dotfiles
-```
-
-### Install yay
-
-```
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-```
-
-
-### Other stuff
-```
-sudo pacman -Syu 7zip curl neovim i3 nitrogen xfce4-screenshooter ffmpeg yt-dlp galculator vlc ripgrep tmux wget git picom pavucontrol noisetorch htop 
+./deploy.sh
+./install.sh
 ```
 
 ---
 
-## XFCE GUI Configurations
+## i3 + XFCE Configurations
 
 ### Session and Startup
 
@@ -151,6 +138,7 @@ For xfdesktop, click 'Immediately' and change it to the 'Never' option
 
 #### Application Autostart
 Add i3 to the list of startup applications.
+
 ```
 Name: i3
 Description: Tiling Window Manager
@@ -159,8 +147,8 @@ Command: i3
 
 Remove the existing desktop manager
 ```
-sudo apt purge xfwm4
-sudo apt purge xfdesktop
+sudo pacman -R xfwm4
+sudo pacman -R xfdesktop # I think xfce4-screenshooter depends on this though so idk
 ```
 
-Restart the machine, or `sudo reboot`
+Restart the machine: `sudo reboot`
