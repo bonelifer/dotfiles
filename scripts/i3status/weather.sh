@@ -11,5 +11,5 @@ weather_icon=$(echo "$weather_data" | awk '{print $1}')
 temp_f=$(echo "$weather_data" | awk '{print $2}' | tr -d '°F' | sed 's/\+//')
 temp_c=$(echo "$weather_data_c" | awk '{print $2}' | tr -d '°C' | sed 's/\+//')
 # Display the weather information
-echo "$weather_icon $temp_f°F $temp_c°C"
+echo "$weather_icon $temp_f°F|$temp_c°C"
 

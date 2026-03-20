@@ -36,6 +36,7 @@ safe_cp "$HOME_DIR/.xbindkeysrc"  "$DOTFILES_DIR/rc/.xbindkeysrc"
 # ~/ -> config/ individual files
 safe_cp "$HOME_DIR/.tmux.conf"   "$DOTFILES_DIR/config/.tmux.conf"
 safe_cp "$HOME_DIR/.gitmux.conf" "$DOTFILES_DIR/config/.gitmux.conf"
+safe_cp "$HOME_DIR/.i3blocks.conf" "$DOTFILES_DIR/config/.i3blocks.conf"
 
 # ~/.config/ -> config/ individual files
 safe_cp "$HOME_DIR/.config/picom.conf"   "$DOTFILES_DIR/config/picom.conf"
