@@ -17,6 +17,7 @@ cp "$DOTFILES_DIR/rc/.xbindkeysrc"  "$HOME_DIR/.xbindkeysrc"
 # config/ individual files -> ~/
 cp "$DOTFILES_DIR/config/.tmux.conf"   "$HOME_DIR/.tmux.conf"
 cp "$DOTFILES_DIR/config/.gitmux.conf" "$HOME_DIR/.gitmux.conf"
+cp "$DOTFILES_DIR/config/.i3blocks.conf" "$HOME_DIR/.i3blocks.conf"
 
 # config/ individual files -> ~/.config/
 cp "$DOTFILES_DIR/config/picom.conf"   "$HOME_DIR/.config/picom.conf"
