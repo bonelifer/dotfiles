@@ -51,6 +51,7 @@ python-gpgme
 python-pipenv
 qbittorrent
 reaper
+ripgrep
 ristretto
 scrcpy
 signal-desktop

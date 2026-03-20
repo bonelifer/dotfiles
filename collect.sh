@@ -54,4 +54,8 @@ rm -f "$DOTFILES_DIR/config/nvim/lazy-lock.json"
 # ~/scripts/ -> scripts/
 safe_cp_dir "$HOME_DIR/scripts" "$DOTFILES_DIR/scripts"
 
+# Populate package lists
+pacman -Qqent | sort > "$DOTFILES_DIR/repo-packages.txt"
+yay -Qqm | sort > "$DOTFILES_DIR/aur-packages.txt"
+
 echo "Done."

@@ -1,4 +1,3 @@
-aider-chat-venv
 betterdiscord-installer-bin
 betterdiscord-installer-bin-debug
 cura-resources-materials

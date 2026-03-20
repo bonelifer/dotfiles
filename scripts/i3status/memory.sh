@@ -12,5 +12,15 @@ memory_percent=$((used_memory * 100 / total_memory))
 # Format the used memory in gigabytes
 used_memory_gb=$(echo "scale=2; $used_memory / 1024" | bc)
 
+if [ "$memory_percent" -ge 90 ]; then
+    color="#FF4444"
+elif [ "$memory_percent" -ge 70 ]; then
+    color="#FFAA00"
+else
+    color=""
+fi
+
 echo "$used_memory_gb GB ($memory_percent%)"
+echo ""
+echo "$color"
 
