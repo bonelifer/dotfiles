@@ -1,5 +1,3 @@
 #!/bin/bash
 
-sensors | grep 'CPU:' | awk '{print $2}' | head -n 1
-
-
+sensors | grep -e 'Tctl\|CPU:' | awk '{print $2}' | head -n 1
