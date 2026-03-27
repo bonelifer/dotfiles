@@ -1,15 +1,9 @@
 #!/bin/bash
-# Fetch weather information from wttr.in
-#curl -s "wttr.in/North_Hollywood?format=1" | tr -s ' '
+# Fetch weather information from Open-Meteo API
 
-# Get the weather data for North Hollywood
-weather_data=$(curl -s "wttr.in/North_Hollywood?format=1")
-weather_data_c=$(curl -s "wttr.in/North_Hollywood?format=1&metric")
+data=$(curl -s "https://api.open-meteo.com/v1/forecast?latitude=34.14&longitude=-118.41&current=temperature_2m,wind_speed_10m&hourly=temperature_2m")
 
-# Extract the relevant information from the weather data
-weather_icon=$(echo "$weather_data" | awk '{print $1}')
-temp_f=$(echo "$weather_data" | awk '{print $2}' | tr -d '°F' | sed 's/\+//')
-temp_c=$(echo "$weather_data_c" | awk '{print $2}' | tr -d '°C' | sed 's/\+//')
-# Display the weather information
-echo "$weather_icon $temp_f°F|$temp_c°C"
+temp_c=$(echo "$data" | jq -r '.current.temperature_2m')
+temp_f=$(echo "$temp_c" | awk '{printf "%.1f", $1 * 9/5 + 32}')
 
+echo "${temp_f}°F | ${temp_c}°C"
