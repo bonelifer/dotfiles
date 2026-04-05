@@ -1,3 +1,4 @@
+balena-etcher
 cura-resources-materials
 espanso-x11-bin
 grub-customizer

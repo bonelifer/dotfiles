@@ -1,7 +1,4 @@
 matches:
-  - trigger: "i"
-    replace: "I"
-    word: true
   - trigger: "monday"
     replace: "Monday"
     word: true
@@ -19,9 +16,6 @@ matches:
     word: true
   - trigger: "yu"
     replace: "you"
-    word: true
-  - trigger: "th"
-    replace: "the"
     word: true
 
   - trigger: "abandonned"
@@ -3108,18 +3102,6 @@ matches:
     propagate_case: true
     word: true
     replace: clinically
-  - trigger: cmo
-    propagate_case: true
-    word: true
-    replace: com
-  - trigger: cmoputer
-    propagate_case: true
-    word: true
-    replace: computer
-  - trigger: co
-    propagate_case: true
-    word: true
-    replace: ::coincided
   - trigger: Coca
     propagate_case: true
     word: true
@@ -12732,6 +12714,10 @@ matches:
     propagate_case: true
     word: true
     replace: required
+  - trigger: restaraunt
+    propagate_case: true
+    word: true
+    replace: restaurant
   - trigger: resaurant
     propagate_case: true
     word: true
@@ -12977,6 +12963,10 @@ matches:
     word: true
     replace: rhyme
   - trigger: rhythem
+    propagate_case: true
+    word: true
+    replace: rhythm
+  - trigger: rythim
     propagate_case: true
     word: true
     replace: rhythm
